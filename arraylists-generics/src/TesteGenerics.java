@@ -17,7 +17,7 @@ public class TesteGenerics {
 
         Cliente cli = new Cliente();
         clientes.add(cli);
-        
+
 
 
     }
