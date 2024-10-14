@@ -2,7 +2,7 @@ package modelo;
 
 import java.math.BigDecimal;
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta>{
     BigDecimal saldo = new BigDecimal("0");
     private int agencia;
     private int numero;
@@ -105,5 +105,12 @@ public abstract class Conta {
             return false;
         }
         return true;
+    }
+
+    //Para definir a ordem natural
+    @Override
+    public int compareTo(Conta outra) {
+        //A forma de comparação é definida na própria classe
+        return Double.compare(this.saldo.doubleValue(), outra.saldo.doubleValue());
     }
 }
